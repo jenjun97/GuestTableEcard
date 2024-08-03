@@ -1,5 +1,5 @@
 // 設定倒數計時的目標日期和時間
-var targetDate = new Date('2024-08-01T10:35:00');
+var targetDate = new Date('2024-08-01T23:35:00');
 var timerId = null;
 
 // 格式化時間顯示
