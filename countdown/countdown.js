@@ -1,21 +1,21 @@
 // 設定倒數計時的目標日期和時間
-var targetDate = new Date('2024-08-31T23:35:00');
+var targetDate = new Date('2024-08-10T23:35:00');
 var timerId = null;
 
 // 格式化時間顯示
 function formatTime(time) {
-    // 設置計時器的字體顏色為黑色
-    document.getElementById('timer').style.color = 'black';
-    // 計算總小時數
-    var hours = Math.floor(time / 3600);
-    var minutes = Math.floor((time % 3600) / 60);
-    var seconds = time % 60;
-    // 返回格式化後的時間字串
-    // 格式化小時數，刪除千位數前面的0
-    var formattedHours = hours.toString();
-    
-    // 返回格式化後的時間字串
-    return formattedHours + ':' + ('0' + minutes).slice(-2) + ':' + ('0' + seconds).slice(-2);
+	// 設置計時器的字體顏色為黑色
+	document.getElementById('timer').style.color = 'black';
+	// 計算總小時數
+	var hours = Math.floor(time / 3600);
+	var minutes = Math.floor((time % 3600) / 60);
+	var seconds = time % 60;
+	// 返回格式化後的時間字串
+	// 格式化小時數，刪除千位數前面的0
+	var formattedHours = hours.toString();
+
+	// 返回格式化後的時間字串
+	return formattedHours + ':' + ('0' + minutes).slice(-2) + ':' + ('0' + seconds).slice(-2);
 
 }
 

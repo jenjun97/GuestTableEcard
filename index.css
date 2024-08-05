@@ -1,7 +1,7 @@
 :root {
     --overlay-padding-top-bottom: 10px; /* 調整方框上下padding */
     --overlay-padding-left-right: 5vw; /* 調整方框左右padding */
-    --overlay-font-size: 5vw; /* 調整文字大小 */
+    --overlay-font-size: 2rem; /* 調整文字大小 */
     --overlay-bg-color: rgba(0, 0, 0, 0.5); /* 調整方框背景顏色 */
 }
 
@@ -69,6 +69,13 @@
   color: white;
   font-size: 2rem;
   text-align: center;
+}
+
+/* RWD 設定 */
+@media ( max-width : 768px) {
+	.overlay-text {
+	font-size:1rem;
+	}
 }
 
 
