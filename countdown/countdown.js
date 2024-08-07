@@ -1,5 +1,7 @@
+
+
 // 設定倒數計時的目標日期和時間
-var targetDate = new Date('2024-08-10T23:35:00');
+var targetDate = new Date('2024-08-09T23:34:00');
 var timerId = null;
 
 // 格式化時間顯示
@@ -33,6 +35,11 @@ function updateTimer() {
 		document.getElementById('timer').style.color = 'red';
 		// 清除計時器
 		clearInterval(timerId);
+		
+		// 顯示thief元素
+		document.getElementById('thief').style.display = 'block';
+		// 隱藏countdown元素
+		document.querySelector('.countdown').style.display = 'none';
 		return;
 	}
 
