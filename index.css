@@ -5,6 +5,10 @@
     --overlay-bg-color: rgba(0, 0, 0, 0.5); /* 調整方框背景顏色 */
 }
 
+#thief{
+	display:none;
+}
+
 /* 設置album類的相對定位，以便overlay-text正確定位 */
 .album {
     position: relative;
