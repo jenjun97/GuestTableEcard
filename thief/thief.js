@@ -27,13 +27,22 @@ document.getElementById('ps-btn').addEventListener('click', function() {
         if (!url || url === 'null') {
             alert("密碼錯誤");
         } else {
+			// 導頁
 //            window.location.href = url;
-			alert(url);
+
+			// 清空輸入框內容
+			document.getElementById('pass-a').value = '';
+			document.getElementById('pass-b').value = '';
+			document.getElementById('pass-c').value = '';
+			document.getElementById('pass-d').value = '';
+
+			// 在新標籤頁中打開 URL
+			window.open(url, '_blank');
         }
     })
     .catch(error => {
         console.error('Error:', error);
-        alert("發生錯誤，請稍後再試");
+        alert("發生錯誤，請告知婚宴聯絡人");
     });
 });
 
