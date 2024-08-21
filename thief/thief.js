@@ -1,7 +1,7 @@
-document.getElementById('ps-btn').addEventListener('click', function() {
+
+document.getElementById('unlock-btn').addEventListener('click', function() {
 	// 顯示 loading 畫面
-//	document.getElementById('loadingOverlay').style.display = 'flex';
-	document.getElementById('unlock-card').style.display = 'flex';
+	document.getElementById('loadingOverlay').style.display = 'flex';
 	// 取得四個 input 的值
 	var passA = document.getElementById('pass-a').value.trim();
 	var passB = document.getElementById('pass-b').value.trim();
@@ -27,12 +27,30 @@ document.getElementById('ps-btn').addEventListener('click', function() {
 	})
 		.then(response => response.json())
 		.then(data => {
+			// 取出返回的值
+			const unlock = data.unlock;
+			const num = data.num;
 			const url = data.url;
-			const ansNum = data.ansNum;
 
 			// 隱藏 loading 畫面
 			document.getElementById('loadingOverlay').style.display = 'none';
-			if (!url || url === 'null') {
+
+			if (unlock === 'fail') {
+				document.getElementById('fail-card').style.display = 'flex';
+			} else if (unlock == 'success') {
+				document.getElementById("num").textContent = num;
+				document.getElementById('success-card').style.display = 'flex';
+//				document.getElementById("successUrl").href = url;
+				console.log(url);
+			} else {
+				console.error('Error:', error);
+				alert("發生錯誤，請告知婚宴聯絡人");
+			}
+
+			return;
+			if (unlock === 'fail') {
+				document.getElementById('loadingOverlay').style.display = 'flex';
+			} else if (!url || url === 'null') {
 				alert("密碼錯誤");
 			} else {
 				// 導頁
@@ -50,6 +68,9 @@ document.getElementById('ps-btn').addEventListener('click', function() {
 			}
 		})
 		.catch(error => {
+			// 隱藏 loading 畫面
+			document.getElementById('loadingOverlay').style.display = 'none';
+
 			console.error('Error:', error);
 			alert("發生錯誤，請告知婚宴聯絡人");
 		});
@@ -59,3 +80,14 @@ document.getElementById('ps-btn').addEventListener('click', function() {
 function isValidNumber(value) {
 	return value.length === 1 && /^[0-9]$/.test(value);
 }
+
+// 按下解密失敗按鈕後，關閉畫面
+document.getElementById('fail-btn').addEventListener('click', function() {
+	document.getElementById('fail-card').style.display = 'none';
+});
+
+// 按下解密成功按鈕後，關閉畫面
+document.getElementById('success-btn').addEventListener('click', function() {
+	document.getElementById('success-card').style.display = 'none';
+});
+
