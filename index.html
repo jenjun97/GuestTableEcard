@@ -42,6 +42,8 @@
 		</div>
 	</div>
 
+	<hr>
+
 	<!-- 計時器顯示區域 -->
 	<div class="countdown">
 		<div class="text-center" width="100%">
@@ -53,6 +55,9 @@
 
 	<!-- 怪盜基德區域，預設隱藏 -->
 	<div id="thief">
+		<div class="text-center" width="100%">
+			<div class="sp-album-title">隱藏版婚紗照</div>
+		</div>
 		<div class="container">
 			<img src="images/thief.jpg" style="width: 100%; height: auto;">
 		</div>
@@ -114,27 +119,28 @@
 
 	<!-- password fail -->
 	<div id="fail-card">
-		<div class="card" style="width: 20rem;">
+		<div class="card">
 			<img src="images/password_fail.jpg" class="card-img-top" alt="密碼錯誤">
 			<div class="card-body text-center">
 				<h5 id="card-title">解密失敗</h5>
 				<a href="#">
-					<button id="fail-btn" class="btn btn-dark" style="border-radius: 20px;">再試一次！</button>
+					<button id="fail-btn" class="btn btn-dark"
+						style="border-radius: 20px;">再試一次！</button>
 				</a>
 			</div>
 		</div>
 	</div>
-	
+
 	<!-- password success -->
 	<div id="success-card">
-		<div class="card" style="width: 20rem;">
+		<div class="card">
 			<img src="images/password_success.jpg" class="card-img-top"
-				alt="密碼錯誤">
+				alt="成功解密">
 			<div class="card-body text-center">
 				<h5 id="card-title">
 					您是第<span id="num"></span>個答對的人
 				</h5>
-				<a id="successUrl" href="#">
+				<a id="successUrl" href="#" target="_blank">
 					<button id="success-btn" class="btn btn-dark"
 						style="border-radius: 20px;">打開被偷的婚紗照</button>
 				</a>
@@ -142,7 +148,25 @@
 		</div>
 	</div>
 
-
+	<!-- password winner -->
+	<div id="winner-card">
+		<div class="card">
+			<img src="images/password_success.jpg" class="card-img-top"
+				alt="搶先解密的贏家">
+			<div class="card-body text-center">
+				<h5 id="card-title">
+					您是第<span id="num"></span>個答對的人
+				</h5>
+				<div>
+					<input type="text">
+				</div>
+				<a id="successUrl" href="#" target="_blank">
+					<button id="success-btn" class="btn btn-dark"
+						style="border-radius: 20px;">打開被偷的婚紗照</button>
+				</a>
+			</div>
+		</div>
+	</div>
 
 	<!-- footer -->
 	<footer class="section pb-4">

@@ -1,4 +1,3 @@
-
 document.getElementById('unlock-btn').addEventListener('click', function() {
 	// 顯示 loading 畫面
 	document.getElementById('loadingOverlay').style.display = 'flex';
@@ -40,32 +39,31 @@ document.getElementById('unlock-btn').addEventListener('click', function() {
 			} else if (unlock == 'success') {
 				document.getElementById("num").textContent = num;
 				document.getElementById('success-card').style.display = 'flex';
-//				document.getElementById("successUrl").href = url;
-				console.log(url);
+				document.getElementById("successUrl").href = url;
 			} else {
 				console.error('Error:', error);
 				alert("發生錯誤，請告知婚宴聯絡人");
 			}
 
 			return;
-			if (unlock === 'fail') {
-				document.getElementById('loadingOverlay').style.display = 'flex';
-			} else if (!url || url === 'null') {
-				alert("密碼錯誤");
-			} else {
+//			if (unlock === 'fail') {
+//				document.getElementById('loadingOverlay').style.display = 'flex';
+//			} else if (!url || url === 'null') {
+//				alert("密碼錯誤");
+//			} else {
 				// 導頁
 				//   window.location.href = url;
 
 				// 清空輸入框內容
-				document.getElementById('pass-a').value = '';
-				document.getElementById('pass-b').value = '';
-				document.getElementById('pass-c').value = '';
-				document.getElementById('pass-d').value = '';
+//				document.getElementById('pass-a').value = '';
+//				document.getElementById('pass-b').value = '';
+//				document.getElementById('pass-c').value = '';
+//				document.getElementById('pass-d').value = '';
 
 				// 在新標籤頁中打開 URL
-				// window.open(url, '_blank');
-				alert(url);
-			}
+//				window.open(url, '_blank');
+//				alert(url);
+//			}
 		})
 		.catch(error => {
 			// 隱藏 loading 畫面
