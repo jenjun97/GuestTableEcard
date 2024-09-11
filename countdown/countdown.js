@@ -1,7 +1,7 @@
 
 
 // 設定倒數計時的目標日期和時間
-var targetDate = new Date('2024-09-09T09:13:00');
+var targetDate = new Date('2024-09-11T09:07:00');
 var timerId = null;
 
 // 格式化時間顯示
@@ -28,11 +28,11 @@ function updateTimer() {
 	// 計算剩餘時間（秒）
 	var timeLeft = Math.floor((targetDate - now) / 1000);
 
-	// 如果時間到，顯示紅色00:00:00
+	// 如果時間到，顯示
 	if (timeLeft <= 0) {
 		// 設置計時器顯示為00天 00:00:00，並將字體顏色設為紅色
-		document.getElementById('timer').innerHTML = '00:00:00';
-		document.getElementById('timer').style.color = 'red';
+		// document.getElementById('timer').innerHTML = '00:00:00';
+		// document.getElementById('timer').style.color = 'red';
 		// 清除計時器
 		clearInterval(timerId);
 		
