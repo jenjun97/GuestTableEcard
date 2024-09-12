@@ -33,11 +33,12 @@
 	<!-- 婚紗照 -->
 	<div class="album">
 		<div class="content-center">
-			<a target="_blank" href="https://myalbum.com/album/UBhSG6NhUGQpKz/">
+
+			<a target="_blank" href="https://myalbum.com/album/LfRK4wTM5YYaJs/">
 				<img width="460" height="345" style="width: 100%; height: auto;"
-				src="https://myalbum.com/album/UBhSG6NhUGQpKz/cover?size=1000"
-				border="0" /> <!-- 半透明方框 -->
-				<div class="overlay-text">完整版婚紗照</div>
+				src="https://myalbum.com/album/LfRK4wTM5YYaJs/cover?size=1000"
+				border="0" />
+				<div class="overlay-text fs-4">完整版婚紗照</div>
 			</a>
 		</div>
 	</div>
@@ -62,23 +63,17 @@
 			<img src="images/thief.jpg" style="width: 100%; height: auto;">
 		</div>
 		<div class="container">
-			<div class="row text-center">
-				<div class="col col-thief">
-					<label for="pass-a">A</label> <input class="text-center" type="tel"
-						id="pass-a" maxlength="1" value="3">
-				</div>
-				<div class="col col-thief">
-					<label for="pass-b">B</label> <input class="text-center" type="tel"
-						id="pass-b" maxlength="1" value="0">
-				</div>
-				<div class="col col-thief">
-					<label for="pass-c">C</label> <input class="text-center" type="tel"
-						id="pass-c" maxlength="1" value="7">
-				</div>
-				<div class="col col-thief">
-					<label for="pass-d">D</label> <input class="text-center" type="tel"
-						id="pass-d" maxlength="1" value="9">
-				</div>
+			<div class="text-center">
+				<label class="fs-5" for="pass-a">A</label> <input
+					class="text-center thief-input fs-5" type="tel" id="pass-a"
+					maxlength="1" value=""> <label class="fs-5" for="pass-b">B</label>
+				<input class="text-center thief-input fs-5" type="tel" id="pass-b"
+					maxlength="1" value=""> <label class="fs-5" for="pass-c">C</label>
+				<input class="text-center thief-input fs-5" type="tel" id="pass-c"
+					maxlength="1" value=""> <label class="fs-5" for="pass-d">D</label>
+				<input class="text-center thief-input fs-5" type="tel" id="pass-d"
+					maxlength="1" value="">
+				<!-- 9703 -->
 			</div>
 		</div>
 		<div class="container text-center" style="margin-top: 25px;">
@@ -90,16 +85,16 @@
 	<!-- 上傳照片 -->
 	<section>
 		<div class="container">
-			<div class="section px-3 bg-white shadow text-center overlay-upload">
-				<div style="font-size: 1.3rem;">♥請與我們分享♥</div>
-				<div style="font-size: 1.3rem;">♥您今天拍的照片吧♥</div>
+			<div class="px-3 bg-white shadow text-center overlay-upload">
+				<div class="fs-5">♥請與我們分享♥</div>
+				<div class="fs-5">♥您今天拍的照片吧♥</div>
 
 				<form id="uploadForm">
 					<!-- Bootstrap 4.1.1 custom file input -->
 					<div class="form-group">
 						<div class="custom-file">
-							<input type="file" class="form-control-file" id="fileInput"
-								name="file" multiple required style="font-size: 1.3rem;">
+							<input id="fileInput" type="file" class="form-control-file"
+								name="file" multiple required>
 						</div>
 					</div>
 					<!-- Bootstrap 4.1.1 styled button -->
@@ -108,8 +103,8 @@
 				</form>
 			</div>
 		</div>
-
 	</section>
+
 
 	<!-- Loading overlay with loader animation -->
 	<div id="loadingOverlay">
@@ -118,7 +113,7 @@
 	</div>
 
 	<!-- password fail -->
-	<div id="fail-card">
+	<div id="fail-card" class="card-parent">
 		<div class="card">
 			<img src="images/password_fail.jpg" class="card-img-top" alt="密碼錯誤">
 			<div class="card-body text-center">
@@ -132,13 +127,13 @@
 	</div>
 
 	<!-- password success -->
-	<div id="success-card">
+	<div id="success-card" class="card-parent">
 		<div class="card">
 			<img src="images/password_success.jpg" class="card-img-top"
 				alt="成功解密">
 			<div class="card-body text-center">
 				<h5 id="card-title">
-					您是第<span id="num"></span>個答對的人
+					您是第<span id="success-num"></span>個答對的人
 				</h5>
 				<a id="successUrl" href="#" target="_blank">
 					<button id="success-btn" class="btn btn-dark"
@@ -149,24 +144,34 @@
 	</div>
 
 	<!-- password winner -->
-	<div id="winner-card">
+	<div id="winner-card" class="card-parent">
 		<div class="card">
 			<img src="images/password_success.jpg" class="card-img-top"
-				alt="搶先解密的贏家">
+				alt="成功解密">
 			<div class="card-body text-center">
-				<h5 id="card-title">
-					您是第<span id="num"></span>個答對的人
+				<h5 id="card-title" class="fs-2">
+					您是第<span id="winner-num"></span>個答對的人
 				</h5>
 				<div>
-					<input type="text">
+					<label for="winner-name" class="fs-3">恭喜您贏得獎品</label>
 				</div>
-				<a id="successUrl" href="#" target="_blank">
-					<button id="success-btn" class="btn btn-dark"
-						style="border-radius: 20px;">打開被偷的婚紗照</button>
-				</a>
+				<div>
+					<label for="winner-name" class="fs-3">請輸您的名字或匿稱</label>
+				</div>
+				<div>
+					<input id="winner-name" class="fs-3" type="text">
+				</div>
+				<div>
+					<input id="winner-uuid" class="fs-3" type="hidden">
+				</div>
+				<button id="winner-btn" class="btn btn-dark"
+					style="border-radius: 20px;">
+					<span class="fs-5">打開被偷的婚紗照</span>
+				</button>
 			</div>
 		</div>
 	</div>
+
 
 	<!-- footer -->
 	<footer class="section pb-4">
