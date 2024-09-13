@@ -18,7 +18,7 @@ document.getElementById('unlock-btn').addEventListener('click', function() {
 	var password = passA + passB + passC + passD;
 
 	// 發送 POST 請求
-	fetch('https://172.233.76.34:8080/api/thief_password', {
+	fetch('http://172.233.76.34:8080/api/thief_password', {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'
@@ -103,7 +103,7 @@ document.getElementById('winner-btn').addEventListener('click', function() {
 	}
 
 	// 發送 POST 請求
-	fetch('https://172.233.76.34:8080/api/thief_winner', {
+	fetch('http://172.233.76.34:8080/api/thief_winner', {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'
